@@ -1,0 +1,25 @@
+.clients {
+	background: {
+		repeat: no-repeat;
+		position: 50% 50%;
+		size: cover;
+	}
+
+	&-list {
+		&-item {
+			padding: 6em 2em 2em;
+			text-align: center;
+			color: $white;
+
+			&-thumb {
+				margin-bottom: 3em;
+			}
+
+			&-name {
+				margin: 4em 0 2em;
+				font-weight: $font-weight-bold;
+				text-transform: uppercase;
+			}
+		}
+	}
+}

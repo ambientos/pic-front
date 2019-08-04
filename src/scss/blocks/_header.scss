@@ -1,0 +1,68 @@
+.header {
+	background-color: $white;
+
+	@include media-breakpoint-up("xl") {
+		max-width: 1920px;
+		margin: auto;
+	}
+
+	&-logo,
+	&-callback {
+		$size: 22.5%;
+
+		flex-basis: $size;
+		max-width: $size;
+	}
+
+	&-menu {
+		&-nav {
+			min-height: 70px;
+			flex: {
+				basis: 0;
+				grow: 1;
+			}
+		}
+
+		a {
+			color: inherit;
+
+			&:hover {
+				color: $link-hover-color;
+			}
+		}
+	}
+
+	&-callback {
+		text-align: center;
+		color: $white;
+		background-color: $blue;
+
+		&-l {
+			font-weight: $font-weight-medium;
+			text-transform: uppercase;
+
+			@include media-breakpoint-up("xl") {
+				display: block;
+			}
+
+			&::before {
+				$size: $grid-gutter-width * .5;
+
+				display: inline-block;
+				width: $size;
+				height: $size;
+				margin-right: 1em;
+				content: '';
+				background: {
+					image: url('#{$img-dir}tel-white.svg');
+					position: 50% 50%;
+					size: contain;
+				}
+			}
+		}
+
+		a {
+			color: $white;
+		}
+	}
+}

@@ -1,0 +1,21 @@
+.teaser {
+	&._featured {
+		color: $white;
+		background-color: $blue;
+	}
+
+	&-thumb {
+		margin-bottom: 0;
+	}
+
+	&-content {
+		$padding: $grid-gutter-width;
+
+		padding: {
+			top: $padding * .8;
+			right: $padding;
+			bottom: $padding * .8;
+		}
+		font-size: 1.125rem;
+	}
+}
