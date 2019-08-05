@@ -25,15 +25,23 @@
 	}
 
 	&-form {
-		padding: $grid-gutter-width * 3.5 0 $grid-gutter-width * 1.5;
+		padding: $grid-gutter-width * 1.5 0 $grid-gutter-width * .5;
+
+		@include media-breakpoint-up("lg") {
+			padding: $grid-gutter-width * 3.5 0 $grid-gutter-width * 1.5;
+		}
 
 		&-title {
-			margin-bottom: 2.5em;
+			margin-bottom: 1em;
 			font: {
 				size: 1.125rem;
 				weight: $font-weight-bold;
 			}
 			text-transform: uppercase;
+
+			@include media-breakpoint-up("lg") {
+				margin-bottom: 2.5em;
+			}
 		}
 
 		&-accept {

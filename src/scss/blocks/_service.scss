@@ -41,13 +41,16 @@
 			}
 
 			&-title {
-				min-height: 3.6em;
 				margin-bottom: 1.5em;
 				font: {
 					size: .875rem;
 					weight: $font-weight-bold;
 				}
 				text-transform: uppercase;
+
+				@include media-breakpoint-up("md") {
+					min-height: 3.6em;
+				}
 			}
 
 			&-more {

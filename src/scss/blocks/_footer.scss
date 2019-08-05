@@ -2,8 +2,12 @@
 	background-color: $white;
 
 	&-main {
-		padding-top: 4.9em;
+		padding-top: 2.5em;
 		margin-bottom: 2em;
+
+		@include media-breakpoint-up("md") {
+			padding-top: 4.9em;
+		}
 
 		.form-group {
 			margin-bottom: 1em;
@@ -22,8 +26,11 @@
 	}
 
 	&-search {
-		max-width: 399px;
 		margin-bottom: 2.3em;
+
+		@include media-breakpoint-up("md") {
+			max-width: 399px;
+		}
 
 		&-control {
 			$width: $grid-gutter-width * .5;
@@ -41,8 +48,12 @@
 	&-menu {
 		&-columns {
 			column: {
-				count: 3;
+				count: 2;
 				gap: $grid-gutter-width;
+			}
+
+			@include media-breakpoint-up("md") {
+				column-count: 3;
 			}
 
 			li {
@@ -53,10 +64,20 @@
 		}
 
 		&-title {
-			min-height: 2.6em;
-			margin-bottom: 1em;
+			margin: {
+				top: 1.5em;
+				bottom: 1em;
+			}
 			font-weight: $font-weight-medium;
 			color: $blue;
+
+			@include media-breakpoint-up("md") {
+				margin-top: 0;
+			}
+
+			@include media-breakpoint-up("lg") {
+				min-height: 2.6em;
+			}
 		}
 
 		li {
@@ -68,19 +89,46 @@
 		}
 	}
 
+	&-callback {
+		margin-top: 2em;
+
+		@include media-breakpoint-up("lg") {
+			margin-top: 0;
+		}
+	}
+
 	&-contact {
 		margin: {
 			top: 2em;
-			bottom: 3.8em;
+			bottom: 2em;
 		}
 		font-size: 1.125rem;
+
+		@include media-breakpoint-up("md") {
+			margin: {
+				top: 2em;
+				bottom: 3.8em;
+			}
+		}
 
 		&-item {
 			position: relative;
 			padding-left: $grid-gutter-width * 1.1;
 
-			&:not(:first-child) {
-				margin-left: $grid-gutter-width * 1.3;
+			@include media-breakpoint-down("sm") {
+				&:not(:first-child) {
+					margin-top: .5em;
+				}
+			}
+
+			@include media-breakpoint-up("md") {
+				&:not(:first-child) {
+					margin-left: $grid-gutter-width * 1.3;
+				}
+			}
+
+			&._tel-blue {
+				white-space: nowrap;
 			}
 
 			&::before {
@@ -88,11 +136,10 @@
 
 				position: absolute;
 				left: 0;
-				top: 0;
+				top: .1em;
 				bottom: 0;
 				width: $size;
 				height: $size;
-				margin: auto;
 				content: '';
 				background: {
 					repeat: no-repeat;
@@ -111,13 +158,23 @@
 	}
 
 	&-sub {
-		margin-top: 5em;
+		margin-top: 2em;
 		padding: .8em 0;
 		color: $white;
 		background-color: $blue;
 
+		@include media-breakpoint-up("md") {
+			margin-top: 5em;
+		}
+
 		a {
 			color: inherit;
+		}
+	}
+
+	&-policy {
+		@include media-breakpoint-down("sm") {
+			margin: 1em 0;
 		}
 	}
 }
