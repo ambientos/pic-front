@@ -6,28 +6,89 @@
 		margin: auto;
 	}
 
-	&-logo,
+	&-logo {
+		$size: 142px;
+
+		flex-basis: $size;
+		max-width: $size;
+		padding: .5em 0;
+
+		@include media-breakpoint-up("md") {
+			$size: 19%;
+
+			flex-basis: $size;
+			max-width: $size;
+		}
+
+		@include media-breakpoint-down("sm") {
+			margin-left: $grid-gutter-width * .5;
+		}
+	}
+
 	&-callback {
-		$size: 22.5%;
+		$size: 22%;
 
 		flex-basis: $size;
 		max-width: $size;
 	}
 
 	&-menu {
-		&-nav {
-			min-height: 70px;
+		width: 100%;
+		display: table;
+		margin-bottom: 0;
+		padding-right: $grid-gutter-width * .5;
+
+		&-container {
 			flex: {
 				basis: 0;
 				grow: 1;
 			}
 		}
 
+		&-nav {
+			width: 100%;
+		}
+
+		&-toggle {
+			$size: $grid-gutter-width;
+
+			display: block;
+			width: $size;
+			height: $size;
+			border: none;
+			background: {
+				color: transparent;
+				repeat: no-repeat;
+				position: 0 -2px;
+				image: url("data:image/svg+xml;charset=utf8,%3Csvg width='30' height='30' xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg'%3E%3Cg%3E%3Ctitle%3ELayer 1%3C/title%3E%3Cpath id='svg_1' d='m4,10l24,0c1.104,0 2,-0.896 2,-2s-0.896,-2 -2,-2l-24,0c-1.104,0 -2,0.896 -2,2s0.896,2 2,2zm24,4l-24,0c-1.104,0 -2,0.896 -2,2s0.896,2 2,2l24,0c1.104,0 2,-0.896 2,-2s-0.896,-2 -2,-2zm0,8l-24,0c-1.104,0 -2,0.896 -2,2s0.896,2 2,2l24,0c1.104,0 2,-0.896 2,-2s-0.896,-2 -2,-2z' fill='%230365C0'/%3E%3C/g%3E%3C/svg%3E");
+				size: 100% auto;
+			}
+
+			&-container {
+				margin-right: $grid-gutter-width * .5;
+			}
+
+			&-label {
+				margin-right: 1em;
+				text-transform: uppercase;
+			}
+		}
+
+		li {
+			display: table-cell;
+
+		}
+
 		a {
+			display: block;
+			padding: 1.85em .5em;
+			text-align: center;
 			color: inherit;
 
 			&:hover {
-				color: $link-hover-color;
+				color: $white;
+				text-decoration: none;
+				background-color: $blue;
 			}
 		}
 	}
@@ -36,6 +97,14 @@
 		text-align: center;
 		color: $white;
 		background-color: $blue;
+
+		@include media-breakpoint-down("sm") {
+			$width: 100%;
+
+			flex-basis: $width;
+			max-width: $width;
+			min-height: $grid-gutter-width * 1.5;
+		}
 
 		&-l {
 			font-weight: $font-weight-medium;

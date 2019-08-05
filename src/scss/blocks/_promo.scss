@@ -11,9 +11,17 @@
 		&-container {
 			position: absolute;
 			left: 0;
-			top: 230px;
+			top: 50px;
 			right: 0;
 			z-index: 2;
+
+			@include media-breakpoint-between("sm", "md") {
+				top: 100px;
+			}
+			
+			@include media-breakpoint-up("lg") {
+				top: 230px;
+			}
 		}
 
 		button {
