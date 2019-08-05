@@ -11,15 +11,15 @@
 		&-container {
 			position: absolute;
 			left: 0;
-			top: 50px;
+			top: 30px;
 			right: 0;
 			z-index: 2;
 
-			@include media-breakpoint-between("sm", "md") {
-				top: 100px;
+			@include media-breakpoint-between("md", "lg") {
+				top: 80px;
 			}
 			
-			@include media-breakpoint-up("lg") {
+			@include media-breakpoint-up("xl") {
 				top: 230px;
 			}
 		}
@@ -37,11 +37,15 @@
 			}
 
 			&.active {
-				margin: 0 2em;
+				margin: 0 .5em;
 				border: none;
 
+				@include media-breakpoint-up("lg") {
+					margin: 0 2em;
+				}
+
 				span::before {
-					font-size: 6em;
+					font-size: 4em;
 					color: $bg-color;
 					content: counter(nav-list, decimal-leading-zero);
 					text-shadow:
@@ -49,6 +53,10 @@
 						1px -1px 0 $white,
 						-1px 1px 0 $white,
 						1px 1px 0 $white;
+
+					@include media-breakpoint-up("lg") {
+						font-size: 6em;
+					}
 				}
 			}
 
@@ -61,8 +69,8 @@
 	}
 
 	&-item {
-		min-height: 1010px;
-		padding-top: 360px;
+		min-height: 500px;
+		padding-top: 130px;
 		color: $white;
 		background: {
 			color: $bg-color;
@@ -71,12 +79,30 @@
 			size: cover;
 		}
 
+		@include media-breakpoint-between("md", "lg") {
+			min-height: 600px;
+			padding-top: 200px;
+		}
+
+		@include media-breakpoint-up("xl") {
+			min-height: 1010px;
+			padding-top: 360px;
+		}
+
 		&-title {
 			font: {
-				size: 4.5rem;
+				size: 1.875rem;
 				weight: $font-weight-bold;
 			}
 			text-transform: uppercase;
+
+			@include media-breakpoint-between("md", "lg") {
+				font-size: 3em;
+			}
+
+			@include media-breakpoint-up("xl") {
+				font-size: 4.5rem;
+			}
 
 			&::after {
 				display: block;
@@ -89,7 +115,11 @@
 
 		&-info {
 			max-width: 700px;
-			font-size: 1.5rem;
+			font-size: 1rem;
+
+			@include media-breakpoint-up("lg") {
+				font-size: 1.5rem;
+			}
 		}
 
 		&-more {
