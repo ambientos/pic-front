@@ -1,0 +1,14 @@
+extends ./layout/layout.pug
+
+block meta
+	title Главная страница
+
+block header-after
+	include ./blocks/header/promo.pug
+
+block content
+	include ./blocks/main/about.pug
+	
+	include ./blocks/main/services.pug
+
+	include ./blocks/main/clients.pug

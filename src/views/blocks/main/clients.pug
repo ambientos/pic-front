@@ -1,0 +1,18 @@
+extends ../_widget.pug
+
+block title
+	| Наши клиенты
+
+block content
+	.clients(style="background-image:url(t/5.jpg)")
+		.container
+			.clients-list.row
+				- var n=0;
+				while n < 4
+					- n++;
+					.clients-list-item.col-md-3
+						figure.clients-list-item-thumb
+							img(src="t/4.png", alt="ВТБ")
+						.clients-list-item-name Банк ВТБ
+						.clients-list-item-info
+							p Уникальное предприятие, которое является лидером в сфере финансов.

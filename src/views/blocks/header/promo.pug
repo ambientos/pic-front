@@ -1,0 +1,18 @@
+.promo-container.carousel-container(data-loop="1")
+	.promo-nav-container
+		.container
+			.promo-nav.carousel-nav.owl-nav
+
+	.carousel.owl-carousel
+		- var n = 0;
+		while n < 3
+			- n++;
+			.promo-item(style="background-image:url(t/1.jpg)")
+				.container
+					.promo-item-title Инжиниринг
+					.promo-item-info
+						p Консалтинговые услуги в области литейного производства.
+						p Разработка конструкторской документации, оснастки и&nbsp;отливок, литейных технологий.
+
+					.promo-item-more
+						a(href="/", class="btn btn-more") Подробнее

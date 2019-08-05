@@ -1,4 +1,6 @@
 .promo {
+	$bg-color: darken($blue, 25%);
+
 	&-container {
 		position: relative;
 	}
@@ -32,7 +34,7 @@
 
 				span::before {
 					font-size: 6em;
-					color: darken($blue, 25%);
+					color: $bg-color;
 					content: counter(nav-list, decimal-leading-zero);
 					text-shadow:
 						-1px -1px 0 $white,
@@ -55,6 +57,7 @@
 		padding-top: 360px;
 		color: $white;
 		background: {
+			color: $bg-color;
 			repeat: no-repeat;
 			position: 50% 50%;
 			size: cover;

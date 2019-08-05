@@ -5,7 +5,11 @@ const   gulp = require('gulp'),
         sass = require('gulp-sass'),
         plumber = require('gulp-plumber'),
 
+        pug = require('gulp-pug'),
+
         path = {
+            pug: 'views',
+            html: '.',
             src: 'src',
             dist: 'dist',
             js: 'js',
@@ -14,7 +18,7 @@ const   gulp = require('gulp'),
         },
 
         files = {
-            html: [path.dist, '**', '*.html'].join('/'),
+            pug: [path.src, path.pug, '**', '*.pug'].join('/'),
             js: [path.dist, path.js, '**', '*.js'].join('/'),
             css: [path.dist, path.css, '**', '*.css'].join('/'),
             scss: [path.src, path.scss, '**', '*.scss'].join('/')
@@ -41,6 +45,17 @@ function browserSyncReload(done) {
 }
 
 
+// HTML task
+function htmlGenerate() {
+    return gulp.src([path.src, path.pug, '*.pug'].join('/'))
+        .pipe(pug({
+            pretty: '\t'
+        }))
+        .pipe(gulp.dest([path.dist, path.html].join('/')))
+        .pipe(browsersync.stream())
+}
+
+
 // CSS task
 function cssGenerate() {
     return gulp
@@ -58,9 +73,9 @@ function cssGenerate() {
 // Watch files
 function watchFiles() {
     gulp.watch( files.scss, cssGenerate )
+    gulp.watch(files.pug, htmlGenerate)
     gulp.watch(
         [
-            files.html,
             files.js
         ],
         browserSyncReload
@@ -70,6 +85,6 @@ function watchFiles() {
 
 const watch = gulp.parallel(watchFiles, browserSync)
 
+exports.html = htmlGenerate
 exports.css = cssGenerate
-
-exports.default = gulp.series(cssGenerate, watch)
+exports.default = gulp.series(htmlGenerate, cssGenerate, watch)

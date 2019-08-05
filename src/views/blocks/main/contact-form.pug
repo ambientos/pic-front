@@ -1,0 +1,29 @@
+extends ../_widget.pug
+
+block title
+	| Обратная связь
+
+block content
+	.contact-container
+		.container
+			.row
+				.col-md-4.contact-bg
+				.col-md-8
+					.contact-form
+						.contact-form-title Оставьте контакты и мы свяжемся с вами
+						form(action="/")
+							.contact-form-item.form-group
+								.row
+									.col-md-6
+										input.form-control(type="text", placeholder="Ваше имя")
+									.col-md-6
+										input.form-control(type="tel", placeholder="Номер телефона")
+							.contact-form-item.form-group
+								textarea.form-control(cols="10", rows="11", placeholder="Комментарий")
+								.contact-form-accept
+									label
+										input(type="checkbox")
+										|  Я согласен с
+										a(href="/") политикой конфиденциальности
+							.contact-form-item.form-group.d-flex.justify-content-end
+								button.btn.btn-more(type="submit") Отправить
