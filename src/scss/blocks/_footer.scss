@@ -112,9 +112,6 @@
 		}
 
 		&-item {
-			position: relative;
-			padding-left: $grid-gutter-width * 1.1;
-
 			@include media-breakpoint-down("sm") {
 				&:not(:first-child) {
 					margin-top: .5em;
@@ -131,29 +128,7 @@
 				white-space: nowrap;
 			}
 
-			&::before {
-				$size: 18px;
-
-				position: absolute;
-				left: 0;
-				top: .1em;
-				bottom: 0;
-				width: $size;
-				height: $size;
-				content: '';
-				background: {
-					repeat: no-repeat;
-					size: contain;
-				}
-			}
-
-			@each $ico in $icons {
-				&._#{$ico}-blue {
-					&::before {
-						background-image: url('#{$img-dir}#{$ico}-blue.svg');
-					}
-				}
-			}
+			@include icons();
 		}
 	}
 

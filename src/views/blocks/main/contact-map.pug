@@ -1,0 +1,21 @@
+extends ./_widget.pug
+
+block title
+	| Контакты
+
+block content
+	.map-container
+		.map-object
+			script(src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=2BLa8VFaelzZ325ZycUJvDp2kgOl8hmD&amp;width=100%&height=600&amp;lang=ru_RU")
+		.map-content-container.d-flex.align-items-center
+			.container
+				.row
+					.col-xl-5.col-lg-6.col-md-7
+						.map-content
+							.map-title Компания ПИК
+							.map-contacts
+								.map-contacts-item._mark-white г. Казань, ул. Дементьева, 1, к. 11
+								.map-contacts-item._tel-white
+									a(href="tel:+78435708207") 8 (843) 570-82-07
+								.map-contacts-item._mail-white
+									a(href="mailto:info@pecrus.ru") info@pecrus.ru

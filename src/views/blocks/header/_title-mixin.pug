@@ -1,0 +1,4 @@
+mixin header-title(object)
+	.header-title-container(style=(object.titleBg ? "background-image:url(t/"+ object.titleBg +".jpg)" : undefined))
+		.container
+			h1.header-title= object.title

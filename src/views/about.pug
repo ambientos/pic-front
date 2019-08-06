@@ -1,0 +1,18 @@
+extends ./layout/layout.pug
+
+block meta
+	- var pageNum = 1
+
+	title О компании
+
+block append header
+	+header-title({ title: 'О компании', titleBg: '7' })
+
+block content
+	include ./blocks/main/about.pug
+	
+	include ./blocks/main/certs.pug
+
+	include ./blocks/main/clients.pug
+
+	include ./blocks/main/contact-map.pug
