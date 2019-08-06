@@ -1,3 +1,16 @@
+.screen-reader-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  overflow: hidden;
+  word-wrap: normal !important; }
+
 @font-face {
   font-family: "HelveticaNeue";
   font-weight: 400;
@@ -52,10 +65,6 @@
     @media (max-width: 767.98px) {
       .header-logo {
         margin-left: 15px; } }
-  .header-callback {
-    -ms-flex-preferred-size: 22%;
-        flex-basis: 22%;
-    max-width: 22%; }
   .header-menu {
     width: 100%;
     display: table;
@@ -86,8 +95,7 @@
         text-transform: uppercase; }
     .header-menu li {
       display: table-cell; }
-      .header-menu li.active a,
-      .header-menu li a:hover {
+      .header-menu li.active a {
         color: #fff;
         text-decoration: none;
         background-color: #0365C0; }
@@ -96,10 +104,25 @@
       padding: 1.85em .5em;
       text-align: center;
       color: inherit; }
+      .header-menu a:hover {
+        text-decoration: none;
+        color: #0372d9; }
   .header-callback {
+    -ms-flex-preferred-size: 22%;
+        flex-basis: 22%;
+    max-width: 22%;
     text-align: center;
     color: #fff;
-    background-color: #0365C0; }
+    cursor: pointer;
+    background-color: #0365C0;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out; }
+    @media (prefers-reduced-motion: reduce) {
+      .header-callback {
+        -webkit-transition: none;
+        transition: none; } }
+    .header-callback:hover {
+      background: #3b3b3b; }
     @media (max-width: 767.98px) {
       .header-callback {
         -ms-flex-preferred-size: 100%;
@@ -508,6 +531,45 @@
         .clients-list-item-name {
           margin-top: 4em; } }
 
+.product-list {
+  margin-top: 3em; }
+  @media (min-width: 768px) and (max-width: 1199.98px) {
+    .product-list {
+      margin-top: 6em; } }
+  @media (min-width: 1200px) {
+    .product-list {
+      margin-top: 9em; } }
+  .product-list-item {
+    background-color: #fff; }
+    @media (min-width: 768px) {
+      .product-list-item:nth-child(2n+1) .row > :first-child {
+        -webkit-box-ordinal-group: 3;
+            -ms-flex-order: 2;
+                order: 2; } }
+    .product-list-item-thumb {
+      margin-bottom: 0;
+      padding: 15px; }
+    .product-list-item-content {
+      padding: 30px;
+      text-align: center; }
+      @media (min-width: 768px) {
+        .product-list-item-content {
+          text-align: left; } }
+      @media (min-width: 768px) and (max-width: 1199.98px) {
+        .product-list-item-content {
+          padding: 30px 60px; } }
+      @media (min-width: 1200px) {
+        .product-list-item-content {
+          padding: 30px 90px; } }
+    .product-list-item-title {
+      margin-bottom: 1.8em;
+      font-size: 1.125rem;
+      font-weight: 500; }
+    .product-list-item-chars {
+      margin-bottom: 2.5em; }
+      .product-list-item-chars li {
+        margin: 1.5em 0; }
+
 .contact-container {
   color: #fff;
   background-color: #0365C0; }
@@ -607,6 +669,32 @@
         background-image: url("../i/tel-white.svg"); }
       .map-contacts-item._mark-white::before {
         background-image: url("../i/mark-white.svg"); }
+
+.pagination {
+  margin-top: 2em;
+  text-align: center; }
+  .pagination .page-numbers {
+    display: inline-block;
+    margin: 1em .5em 0;
+    padding: .25em .65em;
+    font-weight: 500; }
+    .pagination .page-numbers:not(.dots), .pagination .page-numbers.current {
+      border-width: 1px;
+      border-style: solid; }
+    .pagination .page-numbers.current {
+      color: #fff;
+      border-color: #0372d9;
+      background-color: #0372d9; }
+    .pagination .page-numbers.dots {
+      padding: .25em 0; }
+  .pagination a {
+    color: #adb5bd;
+    border-color: #adb5bd; }
+    .pagination a:hover {
+      text-decoration: none;
+      color: #0372d9;
+      border-color: #fff;
+      background-color: #fff; }
 
 .is-mobile-menu-show {
   overflow-y: hidden; }

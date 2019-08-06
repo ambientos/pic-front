@@ -1,0 +1,30 @@
+extends ./layout/layout.pug
+
+block meta
+	- var pageNum = 3
+
+	title Продукция
+
+block append header
+	+header-title({ title: 'Продукция', titleBg: '12' })
+
+block content
+	.container
+		.product-list
+			- var products = [ 13, 14, 15, 16, 17 ]
+			each productThumbId in products
+				.product-list-item.box-item
+					.row
+						.col-md-6.d-flex.justify-content-center.align-self-center
+							figure.product-list-item-thumb
+								img(src="t/"+ productThumbId +".jpg", alt="")
+						.col-md-6.d-flex.flex-column.align-self-center
+							.product-list-item-content
+								h3.product-list-item-title Корпус редуктора
+								ul.product-list-item-chars.list-unstyled
+									li Масса: 2,8 кг
+									li Марка сплава: Ак7ч
+								.product-list-item-more
+									a.btn.btn-primary.btn-more(href="/") Заказать
+
+		include ./blocks/main/_pagination.pug

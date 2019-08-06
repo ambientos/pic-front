@@ -65,16 +65,36 @@ fieldset:disabled a.btn {
   }
 }
 
+.btn-primary {
+  &:hover {
+    $color: darken(grayscale($blue), 15%);
+    border-color: $color;
+    background-color: $color;
+  }
+}
+
 .btn-more {
   $arrow-size: $grid-gutter-width * 1.5;
 
   position: relative;
   padding-right: calc( #{$arrow-size} + #{$btn-padding-x * 3} );
-  color: $white;
-  border-color: $white;
 
-  &:hover {
+  &:not(.btn-primary) {
     color: $white;
+    border-color: $white;
+
+    &::after {
+      border-left: 1px solid $white;
+    }
+
+    &:hover {
+      color: $blue;
+      background-color: $white;
+
+      &::after {
+        background-image: url('#{$img-dir}arrow-right-blue.svg');
+      }
+    }
   }
 
   &::after {
@@ -85,7 +105,6 @@ fieldset:disabled a.btn {
     bottom: 0;
     width: $arrow-size;
     content: '';
-    border-left: 1px solid $white;
     background: {
       repeat: no-repeat;
       position: 50% 50%;

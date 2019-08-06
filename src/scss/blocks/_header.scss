@@ -25,13 +25,6 @@
 		}
 	}
 
-	&-callback {
-		$size: 22%;
-
-		flex-basis: $size;
-		max-width: $size;
-	}
-
 	&-menu {
 		width: 100%;
 		display: table;
@@ -77,8 +70,7 @@
 		li {
 			display: table-cell;
 
-			&.active a,
-			a:hover {
+			&.active a {
 				color: $white;
 				text-decoration: none;
 				background-color: $blue;
@@ -90,13 +82,28 @@
 			padding: 1.85em .5em;
 			text-align: center;
 			color: inherit;
+
+			&:hover {
+				text-decoration: none;
+				color: $link-hover-color;
+			}
 		}
 	}
 
 	&-callback {
+		$size: 22%;
+
+		flex-basis: $size;
+		max-width: $size;
 		text-align: center;
 		color: $white;
+		cursor: pointer;
 		background-color: $blue;
+		@include transition;
+
+		&:hover {
+			background: darken( grayscale($blue), 15%);
+		}
 
 		@include media-breakpoint-down("sm") {
 			$width: 100%;

@@ -1,6 +1,6 @@
 @import "variables";
 @import "mixins";
-@import "general/fonts";
+@import "general";
 
 @import "bootstrap/functions";
 @import "bootstrap/variables";
@@ -14,7 +14,9 @@
 @import "blocks/teaser";
 @import "blocks/service";
 @import "blocks/clients";
+@import "blocks/product";
 @import "blocks/contact";
 @import "blocks/map";
+@import "blocks/pagination";
 @import "blocks/mobile";
 @import "blocks/popup";
