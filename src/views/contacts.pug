@@ -9,4 +9,7 @@ block append header
 	+header-title({ title: 'Контакты', titleBg: '23' })
 
 block content
+	- var titleHide = true
 	include ./blocks/main/contact-map.pug
+
+	- titleHide = false

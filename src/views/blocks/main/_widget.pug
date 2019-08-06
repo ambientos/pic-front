@@ -1,6 +1,9 @@
+block variables
+
 section.widget
-	.container
-		h2.widget-title
-			block title
+	if ( ! titleHide )
+		.container
+			h2.widget-title
+				block title
 
 	block content
