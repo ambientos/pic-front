@@ -1,0 +1,12 @@
+extends ./layout/layout.pug
+
+block meta
+	- var pageNum = 6
+
+	title Контакты
+
+block append header
+	+header-title({ title: 'Контакты', titleBg: '23' })
+
+block content
+	include ./blocks/main/contact-map.pug
