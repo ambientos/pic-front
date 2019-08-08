@@ -3,8 +3,8 @@
 		.mobile-menu-inner
 			nav.mobile-main-menu.mobile-menu
 				ul
-					each itemTitle in [ 'О компании', 'Услуги', 'Продукция', 'Разработки и инновации', 'Сертификаты и лицензии', 'Контакты' ]
+					each itemTitle, itemLink in { 'about': 'О компании', 'services': 'Услуги', 'products': 'Продукция', 'niokr': 'Разработки и инновации', 'certs': 'Сертификаты и лицензии', 'contacts': 'Контакты' }
 						li
-							a(href="/")= itemTitle
+							a(href= itemLink + ".html")= itemTitle
 
 	.mobile-menu-overlay

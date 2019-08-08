@@ -1,0 +1,8 @@
+mixin list-featured(object)
+	.list-featured-container
+		if ( object.title )
+			h3.list-featured-title= object.title
+
+		ul(class="list-featured _cols-"+ object.cols +" list-unstyled")
+			each item in object.list
+				li= item

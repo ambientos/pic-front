@@ -1,0 +1,14 @@
+extends ./layout/layout.pug
+
+block meta
+	- var pageNum = 4
+
+	title Разработки и инновации
+
+block append header
+	+header-title({ title: 'Разработки и инновации', titleBg: '18' })
+
+block content
+	include ./blocks/main/niokr-1.pug
+
+	include ./blocks/main/niokr-2.pug

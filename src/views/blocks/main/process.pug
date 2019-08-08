@@ -1,0 +1,22 @@
+extends ./_widget.pug
+
+block title
+	| Процесс работы
+
+block content
+	.container
+		.box-info.row
+			- var n = 0
+			while n < 6
+				- n++
+				.box-item.col-xl-4.col-md-6
+					.box-info-item
+						figure.box-info-item-thumb
+							img.img-block(src="t/11.jpg", alt="")
+						.box-info-item-content
+							p Этап номер один. На нем мы делаем это, и это, а еще это. Этап номер один. На нем мы делаем это, и это, а еще это. Этап номер один. На нем мы делаем это, и это, а еще это. Этап номер один. На нем мы делаем это, и это, а еще это. Этап номер один. На нем мы делаем это, и это, а еще это. Этап номер один. На нем мы делаем это, и это, а еще это. Этап номер один. На нем мы делаем это, и это, а еще это.
+
+		.box-video
+			a.box-video-thumb.box-item(href="/")
+				figure
+					img(src="t/24.jpg", alt="")

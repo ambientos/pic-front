@@ -2,10 +2,10 @@
 	nav.header-menu-nav.d-xl-block.d-none
 		ul.header-menu.list-unstyled
 			- var n=0;
-			each itemTitle in [ 'О компании', 'Услуги', 'Продукция', 'Разработки и инновации', 'Сертификаты и лицензии', 'Контакты' ]
+			each itemTitle, itemLink in { 'about': 'О компании', 'services': 'Услуги', 'products': 'Продукция', 'niokr': 'Разработки и инновации', 'certs': 'Сертификаты и лицензии', 'contacts': 'Контакты' }
 				- n++;
 				li(class=(pageNum == n ? "active" : undefined))
-					a(href="/")= itemTitle
+					a(href= itemLink + ".html")= itemTitle
 	
 	.header-menu-toggle-container.d-flex.d-xl-none.align-items-center
 		span.header-menu-toggle-label Меню

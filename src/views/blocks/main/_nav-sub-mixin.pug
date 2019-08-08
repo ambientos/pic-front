@@ -1,0 +1,8 @@
+mixin nav-sub(items)
+	.nav-sub-container
+		ul.nav-sub.d-md-flex.align-items-md-center.list-unstyled
+			- var n = 0
+			each itemTitle in items
+				- n++
+				li(class=(1 === n ? "active" : undefined))
+					a(href="/")= itemTitle

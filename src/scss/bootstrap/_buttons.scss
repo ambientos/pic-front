@@ -77,7 +77,7 @@ fieldset:disabled a.btn {
   $arrow-size: $grid-gutter-width * 1.5;
 
   position: relative;
-  padding-right: calc( #{$arrow-size} + #{$btn-padding-x * 3} );
+  padding-right: calc( #{$arrow-size} + #{$btn-padding-x * 5} );
 
   &:not(.btn-primary) {
     color: $white;
