@@ -999,4 +999,28 @@
     opacity: 1;
     z-index: 10000; }
 
+.popup-callback {
+  padding: 0;
+  overflow: hidden; }
+  @media (min-width: 1200px) {
+    .popup-callback {
+      min-width: 1110px; } }
+  .popup-callback-form {
+    padding: 1.5em 1em 1.5em 2em; }
+    @media (max-width: 1199.98px) {
+      .popup-callback-form {
+        padding-right: 2em; } }
+  .popup-callback-title::after {
+    margin-bottom: 1em; }
+  .popup-callback-thumb {
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover; }
+  .popup-callback-accept {
+    margin-top: 1em;
+    color: #6c757d; }
+  @media (min-width: 1200px) {
+    .popup-callback .fancybox-button path {
+      fill: #fff; } }
+
 /*# sourceMappingURL=site.css.map */

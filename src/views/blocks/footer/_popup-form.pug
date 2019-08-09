@@ -1,0 +1,22 @@
+.d-none
+	#callback.popup-callback
+		.row
+			.col-xl-6
+				.popup-callback-form
+					.popup-callback-title.widget-title Обратная связь
+					form(action="/")
+						.form-group
+							input.form-control(type="text", placeholder="Ваше имя")
+						.form-group
+							input.form-control(type="tel", placeholder="Номер телефона")
+						.form-group
+							textarea.form-control(cols="10", rows="11", placeholder="Комментарий")
+							.popup-callback-accept
+								label
+									input(type="checkbox")
+									|  Я согласен с 
+									a(href="/") политикой конфиденциальности
+						.form-group.d-flex.justify-content-between
+							button.popup-callback-close.btn.d-none.d-md-block Вернуться назад
+							button.btn.btn-primary.btn-more(type="submit") Отправить
+			.col-xl-6.popup-callback-thumb(style="background-image:url(t/22.jpg)")

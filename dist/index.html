@@ -14,6 +14,7 @@
 		<link href="favicon.ico" rel="shortcut icon">
 		<link rel="stylesheet" href="css/bootstrap.css" type="text/css">
 		<link rel="stylesheet" href="css/owl-carousel.css" type="text/css">
+		<link rel="stylesheet" href="css/fancybox.css" type="text/css">
 		<link rel="stylesheet" href="css/site.css" type="text/css">
 	</head>
 	<body>
@@ -35,7 +36,7 @@
 						<button class="header-menu-toggle"></button>
 					</div>
 				</div>
-				<div class="header-callback d-flex align-items-center justify-content-center"><span class="header-callback-inner"><span class="header-callback-l"><span class="d-none d-xl-inline">Обратный звонок</span></span><span class="header-callback-t">8 (843) 570-82-07</span></span></div>
+				<div class="header-callback d-flex align-items-center justify-content-center" data-fancybox data-src="#callback"><span class="header-callback-inner"><span class="header-callback-l"><span class="d-none d-xl-inline">Обратный звонок</span></span><span class="header-callback-t">8 (843) 570-82-07</span></span></div>
 			</div>
 		</header>
 		<div class="promo-container carousel-container" data-loop="1">
@@ -374,8 +375,41 @@
 			</div>
 			<div class="mobile-menu-overlay"></div>
 		</div>
+		<div class="d-none">
+			<div class="popup-callback" id="callback">
+				<div class="row">
+					<div class="col-xl-6">
+						<div class="popup-callback-form">
+							<div class="popup-callback-title widget-title">Обратная связь</div>
+							<form action="/">
+								<div class="form-group">
+									<input class="form-control" type="text" placeholder="Ваше имя">
+								</div>
+								<div class="form-group">
+									<input class="form-control" type="tel" placeholder="Номер телефона">
+								</div>
+								<div class="form-group">
+									<textarea class="form-control" cols="10" rows="11" placeholder="Комментарий"></textarea>
+									<div class="popup-callback-accept">
+										<label>
+											<input type="checkbox"> Я согласен с <a href="/">политикой конфиденциальности</a>
+										</label>
+									</div>
+								</div>
+								<div class="form-group d-flex justify-content-between">
+									<button class="popup-callback-close btn d-none d-md-block">Вернуться назад</button>
+									<button class="btn btn-primary btn-more" type="submit">Отправить</button>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="col-xl-6 popup-callback-thumb" style="background-image:url(t/22.jpg)"></div>
+				</div>
+			</div>
+		</div>
 		<script src="js/jquery-1.12.4.min.js"></script>
 		<script src="js/owl.carousel.min.js"></script>
+		<script src="js/jquery.fancybox.min.js"></script>
 		<script src="js/site.js"></script>
 	</body>
 </html>

@@ -47,4 +47,14 @@
 			dotsContainer: container.find('.carousel-nav')
 		})
 	})
+
+
+	/**
+	 * Popup close button
+	 */
+
+	$('.popup-callback-close').on('click', function(e){
+		e.preventDefault()
+		$.fancybox.close()
+	})
 })(jQuery)
