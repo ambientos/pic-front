@@ -1,10 +1,10 @@
 .header-menu-container.d-flex.align-items-center.justify-content-end
 	nav.header-menu-nav.d-xl-block.d-none
-		ul.header-menu.list-unstyled
+		ul.header-menu.d-flex.justify-content-around.list-unstyled
 			- var n=0;
 			each itemTitle, itemLink in { 'about': 'О компании', 'services': 'Услуги', 'products': 'Продукция', 'niokr': 'Разработки и инновации', 'certs': 'Сертификаты и лицензии', 'contacts': 'Контакты' }
 				- n++;
-				li(class=(pageNum == n ? "active" : undefined))
+				li(class=(pageNum == n ? "current-menu-item" : undefined))
 					a(href= itemLink + ".html")= itemTitle
 	
 	.header-menu-toggle-container.d-flex.d-xl-none.align-items-center

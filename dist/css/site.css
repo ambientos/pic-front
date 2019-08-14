@@ -67,7 +67,6 @@
         margin-left: 15px; } }
   .header-menu {
     width: 100%;
-    display: table;
     margin-bottom: 0;
     padding-right: 15px; }
     .header-menu-container {
@@ -93,12 +92,10 @@
       .header-menu-toggle-label {
         margin-right: 1em;
         text-transform: uppercase; }
-    .header-menu li {
-      display: table-cell; }
-      .header-menu li.active a {
-        color: #fff;
-        text-decoration: none;
-        background-color: #0365C0; }
+    .header-menu li.current-menu-item a {
+      color: #fff;
+      text-decoration: none;
+      background-color: #0365C0; }
     .header-menu a {
       display: block;
       padding: 1.85em .5em;

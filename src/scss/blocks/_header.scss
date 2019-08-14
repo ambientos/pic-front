@@ -27,7 +27,6 @@
 
 	&-menu {
 		width: 100%;
-		display: table;
 		margin-bottom: 0;
 		padding-right: $grid-gutter-width * .5;
 
@@ -68,9 +67,7 @@
 		}
 
 		li {
-			display: table-cell;
-
-			&.active a {
+			&.current-menu-item a {
 				color: $white;
 				text-decoration: none;
 				background-color: $blue;
