@@ -18,10 +18,10 @@ const   gulp = require('gulp'),
         },
 
         files = {
-            pug: [path.src, path.pug, '**', '*.pug'].join('/'),
-            js: [path.dist, path.js, '**', '*.js'].join('/'),
-            css: [path.dist, path.css, '**', '*.css'].join('/'),
-            scss: [path.src, path.scss, '**', '*.scss'].join('/')
+            pug: `${path.src}/${path.pug}/**/*.pug`,
+            js: `${path.dist}/${path.js}/**/*.js`,
+            css: `${path.dist}/${path.css}/**/*.css`,
+            scss: `${path.src}/${path.scss}/**/*.scss`
         }
         
 
@@ -41,17 +41,18 @@ function browserSync(done) {
 // BrowserSync Reload
 function browserSyncReload(done) {
     browsersync.reload()
+
     done()
 }
 
 
 // HTML task
 function htmlGenerate() {
-    return gulp.src([path.src, path.pug, '*.pug'].join('/'))
+    return gulp.src(`${path.src}/${path.pug}/*.pug`)
         .pipe(pug({
             pretty: '\t'
         }))
-        .pipe(gulp.dest([path.dist, path.html].join('/')))
+        .pipe(gulp.dest(`${path.dist}/${path.html}`))
         .pipe(browsersync.stream())
 }
 
@@ -59,20 +60,20 @@ function htmlGenerate() {
 // CSS task
 function cssGenerate() {
     return gulp
-        .src( files.scss )
+        .src(files.scss)
         .pipe(sourcemaps.init())
         .pipe(plumber())
         .pipe(sass({ outputStyle: 'nested' }).on('error', sass.logError))
         .pipe(autoprefixer('last 2 versions'))
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest( [path.dist, path.css].join('/') ))
+        .pipe(gulp.dest(`${path.dist}/${path.css}`))
         .pipe(browsersync.stream())
 }
 
 
 // Watch files
 function watchFiles() {
-    gulp.watch( files.scss, cssGenerate )
+    gulp.watch(files.scss, cssGenerate)
     gulp.watch(files.pug, htmlGenerate)
     gulp.watch(
         [
